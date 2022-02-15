@@ -55,7 +55,7 @@ function updateBg() {
         let winText = document.createElement("span");
         box.appendChild(winText);
         winText.classList.add("wintext");
-        winText.innerText = "Congratulations! You Catch Unicorn! You Win!";
+        winText.innerText = "You Win!";
         score = 0;
         count.style.display = "none";
         unicorncursor.style.display = "none";
