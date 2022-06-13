@@ -6,27 +6,31 @@ const unicorncursor = document.getElementById("cursor");
 const count = document.getElementById("count");
 const line = document.getElementById("line");
 let score = 0;
-let coord1 = getRandomInt(50, 100);
-let coord2 = getRandomInt(50, 100);
-let coord3 = getRandomInt(50, 100);
 
-unicorncursor.style.left = coord1 + 'px';
-unicorncursor.style.top = coord2 + 'px';
-unicorncursor.style.right = coord3 + 'px';
-line.style.left = coord1 + 'px';
-line.style.top = coord2 + 'px';
-line.style.right = coord3 + 'px';
+unicorncursor.style.left = getRandomInt(50, 100) + 'px';
+unicorncursor.style.top = getRandomInt(50, 100) + 'px';
+unicorncursor.style.right = getRandomInt(50, 100) + 'px';
+line.style.left = getRandomInt(50, 100) + 'px';
+line.style.top = getRandomInt(50, 100) + 'px';
+line.style.right = getRandomInt(50, 100) + 'px';
 
 unicorncursor.addEventListener('mousemove', () => {
-    coord1 = getRandomInt(50, 300);
-    coord2 = getRandomInt(50, 300);
-    coord3 = getRandomInt(50, 300);
-    unicorncursor.style.left = coord1 + 'px';
-    unicorncursor.style.top = coord2 + 'px';
-    unicorncursor.style.right = coord3 + 'px';
-    line.style.left = coord1 + 'px';
-    line.style.top = coord2 + 'px';
-    line.style.right = coord3 + 'px';
+    if(window.matchMedia('(min-width: 300px) and (max-width: 800px)').matches) {
+        unicorncursor.style.left = getRandomInt(50, 100) + 'px';
+        unicorncursor.style.top = getRandomInt(50, 100) + 'px';
+        unicorncursor.style.right = getRandomInt(50, 100) + 'px';
+        line.style.left = getRandomInt(50, 100) + 'px';
+        line.style.top = getRandomInt(50, 100) + 'px';
+        line.style.right = getRandomInt(50, 100) + 'px';
+    }
+    else {
+        unicorncursor.style.left = getRandomInt(75, 200) + 'px';
+        unicorncursor.style.top = getRandomInt(75, 200) + 'px';
+        unicorncursor.style.right = getRandomInt(75, 200) + 'px';
+        line.style.left = getRandomInt(75, 200) + 'px';
+        line.style.top = getRandomInt(75, 200) + 'px';
+        line.style.right = getRandomInt(75, 200) + 'px';
+    }
 })
 
 line.addEventListener('click', () => {
